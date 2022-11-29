@@ -3,9 +3,11 @@ public class Card {
     public int suit;
     //Number of the card: 1 = Ace, 2-10 = 2-10, 11 = Jack, 12 = Queen, 13 = King
     public int value;
+    public boolean black;
     public Card(int sui, int val) {
         suit = sui;
         value = val;
+        black = suit % 2 == 0;
     }
     public String toString(){
         String suitStr;
