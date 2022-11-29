@@ -1,25 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="212f33cc-43cf-4895-ab2f-53a072c44bab" name="Changes" comment="" />
+    <list default="true" id="212f33cc-43cf-4895-ab2f-53a072c44bab" name="Changes" comment="Card images">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Solitaire.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Solitaire.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/10_of_clubs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/10_of_diamonds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/10_of_hearts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/10_of_spades.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/2_of_clubs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/2_of_diamonds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/2_of_hearts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/2_of_spades.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/3_of_clubs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/3_of_diamonds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/3_of_hearts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/3_of_spades.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/4_of_clubs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/4_of_diamonds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/4_of_hearts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/4_of_spades.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/5_of_clubs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/5_of_diamonds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/5_of_hearts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/5_of_spades.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/6_of_clubs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/6_of_diamonds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/6_of_hearts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/6_of_spades.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/7_of_clubs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/7_of_diamonds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/7_of_hearts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/7_of_spades.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/8_of_clubs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/8_of_diamonds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/8_of_hearts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/8_of_spades.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/9_of_clubs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/9_of_diamonds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/9_of_hearts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/9_of_spades.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/ace_of_clubs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/ace_of_diamonds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/ace_of_hearts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/ace_of_spades.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/ace_of_spades2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/black_joker.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/jack_of_clubs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/jack_of_clubs2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/jack_of_diamonds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/jack_of_diamonds2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/jack_of_hearts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/jack_of_hearts2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/jack_of_spades.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/jack_of_spades2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/king_of_clubs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/king_of_clubs2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/king_of_diamonds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/king_of_diamonds2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/king_of_hearts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/king_of_hearts2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/king_of_spades.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/king_of_spades2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/queen_of_clubs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/queen_of_clubs2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/queen_of_diamonds.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/queen_of_diamonds2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/queen_of_hearts.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/queen_of_hearts2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/queen_of_spades.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/queen_of_spades2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardPngs/red_joker.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2ICkZ6Ed0O3BBFh5ETc0Jcd3pgw" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/jgons/IdeaProjects/Solitaire"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -31,6 +124,102 @@
       <option name="presentableId" value="Default" />
       <updated>1669693009048</updated>
     </task>
+    <task id="LOCAL-00001" summary="Fucking Genius">
+      <created>1669693226893</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1669693226893</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Std">
+      <created>1669693698494</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1669693698494</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Empty Board">
+      <created>1669695211990</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669695211990</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Constructor and toString Method">
+      <created>1669695274437</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669695274437</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Initializing and filling arrays">
+      <created>1669695300732</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1669695300732</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Shuffle Method">
+      <created>1669699155117</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1669699155117</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Removing tests">
+      <created>1669699213606</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1669699213606</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Colors">
+      <created>1669699533015</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1669699533015</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Shuffle (Twice) + Clean up">
+      <created>1669700106616</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1669700106616</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Card images">
+      <created>1669700527930</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1669700527930</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Fucking Genius" />
+    <MESSAGE value="Std" />
+    <MESSAGE value="Empty Board" />
+    <MESSAGE value="Constructor and toString Method" />
+    <MESSAGE value="Initializing and filling arrays" />
+    <MESSAGE value="Shuffle Method" />
+    <MESSAGE value="Removing tests" />
+    <MESSAGE value="Colors" />
+    <MESSAGE value="Shuffle (Twice) + Clean up" />
+    <MESSAGE value="Card images" />
+    <option name="LAST_COMMIT_MESSAGE" value="Card images" />
   </component>
 </project>

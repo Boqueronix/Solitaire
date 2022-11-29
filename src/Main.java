@@ -1,21 +1,29 @@
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Arrays;
+
 public class Main {
     public static Card[][] ordered = new Card[4][13];
     public static Card[] deck = new Card[52];
+    public static String backUrl = "/svg_playing_cards/backs/back" + ((int) (Math.random() * 12)) + ".png";
     public static void main(String[] args) {
         Board.init();
         for (int i = 0; i < 52; i++) {
             ordered[i / 13][i % 13] = new Card(i / 13, (i % 13) + 1);
         }
-        shuffle(ordered);
+        deck = shuffle(ordered);
+        for (Card card: deck) {
+            System.out.println(card);
+            StdDraw.picture(Math.random(), Math.random(), card.url, 0.25, 0.35);
+        }
+        StdDraw.picture(0.5, 0.5, backUrl, 0.25, 0.35);
     }
     //Uses all the cards in the ordered deck to make a new randomly assigned deck (2D Parameter)
-    public static Card[] shuffle(Card[][] tbs){
+    public static Card @NotNull [] shuffle(Card[] @NotNull [] tbs){
         int[] used = new int[tbs.length * tbs[0].length];
         int index = -1;
         Card[] tbr = new Card[used.length];
-        for (int i = 0; i < used.length; i++) {
-            used[i] = -1;
-        }
+        Arrays.fill(used, -1);
         for (int i = 0; i < used.length; i++) {
             boolean found = false;
             while (!found){
@@ -30,13 +38,11 @@ public class Main {
         return tbr;
     }
     //Uses all the cards in the ordered deck to make a new randomly assigned deck (1D Parameter)
-    public static Card[] shuffle(Card[] tbs){
+    public static Card @NotNull [] shuffle(Card @NotNull [] tbs){
         int[] used = new int[tbs.length];
         int index = -1;
         Card[] tbr = new Card[used.length];
-        for (int i = 0; i < used.length; i++) {
-            used[i] = -1;
-        }
+        Arrays.fill(used, -1);
         for (int i = 0; i < used.length; i++) {
             boolean found = false;
             while (!found){
