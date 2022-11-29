@@ -1,77 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="212f33cc-43cf-4895-ab2f-53a072c44bab" name="Changes" comment="Card images">
+    <list default="true" id="212f33cc-43cf-4895-ab2f-53a072c44bab" name="Changes" comment="New card images (+ randomized backs) and testing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Solitaire.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Solitaire.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/10_of_clubs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/10_of_diamonds.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/10_of_hearts.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/10_of_spades.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/2_of_clubs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/2_of_diamonds.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/2_of_hearts.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/2_of_spades.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/3_of_clubs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/3_of_diamonds.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/3_of_hearts.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/3_of_spades.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/4_of_clubs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/4_of_diamonds.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/4_of_hearts.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/4_of_spades.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/5_of_clubs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/5_of_diamonds.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/5_of_hearts.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/5_of_spades.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/6_of_clubs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/6_of_diamonds.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/6_of_hearts.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/6_of_spades.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/7_of_clubs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/7_of_diamonds.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/7_of_hearts.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/7_of_spades.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/8_of_clubs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/8_of_diamonds.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/8_of_hearts.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/8_of_spades.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/9_of_clubs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/9_of_diamonds.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/9_of_hearts.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/9_of_spades.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/ace_of_clubs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/ace_of_diamonds.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/ace_of_hearts.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/ace_of_spades.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/ace_of_spades2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/black_joker.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/jack_of_clubs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/jack_of_clubs2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/jack_of_diamonds.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/jack_of_diamonds2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/jack_of_hearts.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/jack_of_hearts2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/jack_of_spades.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/jack_of_spades2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/king_of_clubs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/king_of_clubs2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/king_of_diamonds.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/king_of_diamonds2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/king_of_hearts.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/king_of_hearts2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/king_of_spades.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/king_of_spades2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/queen_of_clubs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/queen_of_clubs2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/queen_of_diamonds.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/queen_of_diamonds2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/queen_of_hearts.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/queen_of_hearts2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/queen_of_spades.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/queen_of_spades2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardPngs/red_joker.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -115,6 +48,20 @@
     "last_opened_file_path": "C:/Users/jgons/IdeaProjects/Solitaire"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Solitaire" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -194,7 +141,21 @@
       <option name="project" value="LOCAL" />
       <updated>1669700527930</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="New card images (+ randomized backs) and testing">
+      <created>1669702203278</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1669702203278</updated>
+    </task>
+    <task id="LOCAL-00012" summary="New card images (+ randomized backs) and testing">
+      <created>1669702225914</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1669702225914</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -220,6 +181,7 @@
     <MESSAGE value="Colors" />
     <MESSAGE value="Shuffle (Twice) + Clean up" />
     <MESSAGE value="Card images" />
-    <option name="LAST_COMMIT_MESSAGE" value="Card images" />
+    <MESSAGE value="New card images (+ randomized backs) and testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="New card images (+ randomized backs) and testing" />
   </component>
 </project>

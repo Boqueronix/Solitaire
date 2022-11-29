@@ -7,6 +7,7 @@ public class Card {
     public String url;
     public String suitStr;
     public String valueStr;
+    public double[] coords = new double[2];
     public Card(int sui, int val) {
         suit = sui;
         value = val;
@@ -35,5 +36,11 @@ public class Card {
     }
     public String toString(){
         return valueStr + " of " + suitStr + ".";
+    }
+    public void draw(){
+        StdDraw.picture(coords[0], coords[1], url, 0.25 / 2, 0.35 / 2);
+    }
+    public void draw(double x, double y){
+        StdDraw.picture(x, y, url, 0.25 / 2, 0.35 / 2);
     }
 }
