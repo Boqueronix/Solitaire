@@ -8,6 +8,7 @@ public class Card {
     public String suitStr;
     public String valueStr;
     public double[] coords = new double[2];
+    public boolean revealed;
     public Card(int sui, int val) {
         suit = sui;
         value = val;
@@ -33,14 +34,23 @@ public class Card {
             valueStr = "" + value;
         }
         url = "/svg_playing_cards/fronts/" + suitStr + "_" + valueStr + ".png";
+        revealed = false;
     }
     public String toString(){
         return valueStr + " of " + suitStr + ".";
     }
-    public void draw(){
-        StdDraw.picture(coords[0], coords[1], url, 0.25 / 2, 0.35 / 2);
+    public void draw() {
+        if (revealed) {
+            StdDraw.picture(coords[0], coords[1], url, 0.1, 0.14);
+        } else {
+            StdDraw.picture(coords[0], coords[1], Main.backUrl, 0.1, 0.14);
+        }
     }
     public void draw(double x, double y){
-        StdDraw.picture(x, y, url, 0.25 / 2, 0.35 / 2);
+        if (revealed) {
+            StdDraw.picture(x, y, url, 0.1, 0.14);
+        } else {
+            StdDraw.picture(x, y, Main.backUrl, 0.1, 0.14);
+        }
     }
 }

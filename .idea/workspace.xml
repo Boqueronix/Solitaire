@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="212f33cc-43cf-4895-ab2f-53a072c44bab" name="Changes" comment="New card images (+ randomized backs) and testing">
+    <list default="true" id="212f33cc-43cf-4895-ab2f-53a072c44bab" name="Changes" comment="Board silhouette attempts">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Card.java" afterDir="false" />
@@ -155,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669702225914</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Board silhouette attempts">
+      <created>1669724791880</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1669724791880</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -182,6 +189,7 @@
     <MESSAGE value="Shuffle (Twice) + Clean up" />
     <MESSAGE value="Card images" />
     <MESSAGE value="New card images (+ randomized backs) and testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="New card images (+ randomized backs) and testing" />
+    <MESSAGE value="Board silhouette attempts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Board silhouette attempts" />
   </component>
 </project>
