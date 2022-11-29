@@ -30,6 +30,6 @@ public class Card {
         } else {
             valueStr = "" + value;
         }
-        return "This is the " + valueStr + " of " + suitStr + ".";
+        return valueStr + " of " + suitStr + ".";
     }
 }
