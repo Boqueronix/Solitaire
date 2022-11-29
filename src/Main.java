@@ -6,25 +6,48 @@ public class Main {
         for (int i = 0; i < 52; i++) {
             ordered[i / 13][i % 13] = new Card(i / 13, (i % 13) + 1);
         }
-        shuffle();
+        shuffle(ordered);
     }
-    public static void shuffle(){
-        int[] used = new int[52];
+    //Uses all the cards in the ordered deck to make a new randomly assigned deck (2D Parameter)
+    public static Card[] shuffle(Card[][] tbs){
+        int[] used = new int[tbs.length * tbs[0].length];
         int index = -1;
-        for (int i = 0; i < 52; i++) {
+        Card[] tbr = new Card[used.length];
+        for (int i = 0; i < used.length; i++) {
             used[i] = -1;
         }
-        for (int i = 0; i < 52; i++) {
+        for (int i = 0; i < used.length; i++) {
             boolean found = false;
             while (!found){
-                index = (int) (Math.random() * 52);
+                index = (int) (Math.random() * used.length);
                 if (used[index] == -1) {
                     used[index] = index;
                     found = true;
                 }
             }
-            deck[index] = ordered[i / 13][i % 13];
-//            System.out.println("At index: " + index + " is the " + deck[index]);
+            tbr[index] = tbs[i / tbs[0].length][i % tbs[0].length];
         }
+        return tbr;
+    }
+    //Uses all the cards in the ordered deck to make a new randomly assigned deck (1D Parameter)
+    public static Card[] shuffle(Card[] tbs){
+        int[] used = new int[tbs.length];
+        int index = -1;
+        Card[] tbr = new Card[used.length];
+        for (int i = 0; i < used.length; i++) {
+            used[i] = -1;
+        }
+        for (int i = 0; i < used.length; i++) {
+            boolean found = false;
+            while (!found){
+                index = (int) (Math.random() * used.length);
+                if (used[index] == -1) {
+                    used[index] = index;
+                    found = true;
+                }
+            }
+            tbr[index] = tbs[i];
+        }
+        return tbr;
     }
 }
