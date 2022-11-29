@@ -1,5 +1,4 @@
 import org.jetbrains.annotations.NotNull;
-
 import java.util.Arrays;
 
 public class Main {
@@ -12,6 +11,8 @@ public class Main {
             ordered[i / 13][i % 13] = new Card(i / 13, (i % 13) + 1);
         }
         deck = shuffle(ordered);
+        init();
+        System.out.println(deck.length);
     }
     public static Card @NotNull [] shuffle(Card[] @NotNull [] tbs){
         int[] used = new int[tbs.length * tbs[0].length];
@@ -49,5 +50,48 @@ public class Main {
             tbr[index] = tbs[i];
         }
         return tbr;
+    }
+    public static Card[] removeFirstX(Card[] tbs, int n){
+        Card[] tbr = new Card[tbs.length - n];
+        for (int i = 0; i < tbs.length - n; i++) {
+            tbr[i] = tbs[i + n];
+        }
+        return tbr;
+    }
+    public static void moveTo(Card car, Frame fra){
+        Card[] tbr = new Card[]{};
+        try {
+            tbr = new Card[fra.contents.length + 1];
+            System.out.println("" + fra);
+            for (int i = 0; i < fra.contents.length; i++) {
+                tbr[i] = fra.contents[i];
+            }
+            System.out.println("test");
+            tbr[fra.contents.length] = car;
+            System.out.println("Finished try");
+        } catch (Exception e) {
+            if (fra.contents.length == 0) {
+                System.out.println("Starting " + fra);
+                tbr = new Card[]{car};
+            }
+        }
+        fra.contents = tbr;
+        for (Card c: fra.contents) {
+            System.out.println(c);
+            System.out.println(c.revealed);
+        }
+        car.coords = fra.coords;
+        car.draw();
+    }
+    public static void init(){
+        for (int i = 0; i < 7; i++) {
+            for (int j = 0; j < i + 1; j++) {
+                moveTo(deck[j], Board.columns[i]);
+                //System.out.println("moved " + deck[j] + " to column " + Board.columns[i]);
+                deck[i].revealed = true;
+                deck[j].draw();
+            }
+            deck = removeFirstX(deck,i + 1);
+        }
     }
 }

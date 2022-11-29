@@ -37,7 +37,7 @@ public class Card {
         revealed = false;
     }
     public String toString(){
-        return valueStr + " of " + suitStr + ".";
+        return valueStr + " of " + suitStr;
     }
     public void draw() {
         if (revealed) {

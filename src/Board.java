@@ -1,26 +1,36 @@
 import java.awt.*;
 
 public class Board {
+    //Starting columns (Margins of 0.001 between card and border, 0.02 from card and edge)
+    public static Frame col7 = new Frame(0.93,0.91);
+    public static Frame col6 = new Frame(0.81,0.91);
+    public static Frame col5 = new Frame(0.69,0.91);
+    public static Frame col4 = new Frame(0.57,0.91);
+    public static Frame col3 = new Frame(0.45,0.91);
+    public static Frame col2 = new Frame(0.33,0.91);
+    public static Frame col1 = new Frame(0.21,0.91);
+    public static Frame[] columns = {col1, col2, col3, col4, col5, col6, col7};;
+    //Starting deck and pile
+    public static Frame deckFrame = new Frame(0.07,0.40);
+    public static Frame pileFrame = new Frame(0.07,0.56);
+    //Finishing suit piles
+    public static Frame spadeFrame = new Frame(0.07,0.09);
+    public static Frame diamondFrame = new Frame(0.19,0.09);
+    public static Frame clubFrame = new Frame(0.31,0.09);
+    public static Frame heartFrame = new Frame(0.43,0.09);
+    public static Frame[] suitPiles = {spadeFrame,diamondFrame,clubFrame,heartFrame};
     public static void init(){
         StdDraw.setPenColor(Color.GREEN);
         StdDraw.filledSquare(0.5,0.5,0.5);
         StdDraw.setPenColor(Color.WHITE);
         StdDraw.setPenRadius(0.004);
-        //Starting columns (Margins of 0.001 between card and border, 0.02 from card and edge)
-        StdDraw.rectangle(0.93,0.91,0.055, 0.075);
-        StdDraw.rectangle(0.81,0.91,0.055, 0.075);
-        StdDraw.rectangle(0.69,0.91,0.055, 0.075);
-        StdDraw.rectangle(0.57,0.91,0.055, 0.075);
-        StdDraw.rectangle(0.45,0.91,0.055, 0.075);
-        StdDraw.rectangle(0.33,0.91,0.055, 0.075);
-        StdDraw.rectangle(0.21,0.91,0.055, 0.075);
-        //Starting deck and pile
-        StdDraw.rectangle(0.07,0.40,0.055, 0.075);
-        StdDraw.rectangle(0.07,0.56,0.055, 0.075);
-        //Finishing suit piles
-        StdDraw.rectangle(0.07,0.09,0.055, 0.075);
-        StdDraw.rectangle(0.19,0.09,0.055, 0.075);
-        StdDraw.rectangle(0.31,0.09,0.055, 0.075);
-        StdDraw.rectangle(0.43,0.09,0.055, 0.075);
+        for (Frame col:columns) {
+            col.draw();
+        }
+        deckFrame.draw();
+        pileFrame.draw();
+        for (Frame pile:suitPiles) {
+            pile.draw();
+        }
     }
 }

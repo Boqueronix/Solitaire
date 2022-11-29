@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="212f33cc-43cf-4895-ab2f-53a072c44bab" name="Changes" comment="Board silhouette attempts">
+    <list default="true" id="212f33cc-43cf-4895-ab2f-53a072c44bab" name="Changes" comment="Finished frames">
+      <change afterPath="$PROJECT_DIR$/src/Column.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Frame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Card.java" afterDir="false" />
@@ -162,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669724791880</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Finished frames">
+      <created>1669732831629</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1669732831629</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -190,6 +199,7 @@
     <MESSAGE value="Card images" />
     <MESSAGE value="New card images (+ randomized backs) and testing" />
     <MESSAGE value="Board silhouette attempts" />
-    <option name="LAST_COMMIT_MESSAGE" value="Board silhouette attempts" />
+    <MESSAGE value="Finished frames" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished frames" />
   </component>
 </project>
