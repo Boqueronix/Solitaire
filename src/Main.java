@@ -7,7 +7,6 @@ public class Main {
     public static Card[] deck;
     public static Object selectedObj;
     public static boolean mousePressed = false;
-    public static boolean selected = false;
     public static String backUrl = "/svg_playing_cards/backs/back" + ((int) (Math.random() * 12)) + ".png";
     public static void main(String[] args) {
         Board.init();
@@ -21,12 +20,15 @@ public class Main {
         while (true){
             if (StdDraw.isMousePressed() && !mousePressed){
                 mousePressed = true;
-                if (selected) {
+                if (selectedObj != null) {
                     moveAttempt(StdDraw.mouseX, StdDraw.mouseY);
                 } else {
                     try {
                         selectedObj = select(StdDraw.mouseX, StdDraw.mouseY);
-                    } catch (Exception e){}
+                    } catch (Exception e){
+                        System.out.println("You clicked on nothing");
+                        selectedObj = null;
+                    }
                 }
             } else if (!StdDraw.isMousePressed() && mousePressed) {
                 mousePressed = false;
@@ -35,16 +37,10 @@ public class Main {
     }
 
     private static Object select(double x, double y) {
-        Frame tbrF = null;
+        Frame tbrF = findFrame(x, y);
         Object tbr = null;
-        for (Card car: allCards) {
-            if ((x > car.hitbox()[0] && x < car.hitbox()[2]) && (y > car.hitbox()[1] && y < car.hitbox()[3])){
-//                System.out.println("You clicked on the " + car);
-                tbrF = cardToFrame(car);
-                break;
-            }
-        }
-        if (tbrF.getClass().toString().equals("class Column")){
+        /* Also try (tbrF.contents[tbrF.contents.length - 1].revealed) to Include all open piles*/
+        if (tbrF.getClass().toString().equals("class Column") && tbrF.contents[tbrF.contents.length - 1].revealed){
             for (int i = tbrF.contents.length - 1; i >= 0; i--) {
                 if ((x > tbrF.contents[i].hitbox()[0] && x < tbrF.contents[i].hitbox()[2]) && (y > tbrF.contents[i].hitbox()[1] && y < tbrF.contents[i].hitbox()[3])){
                     System.out.println("You clicked on the " + tbrF.contents[i]);
@@ -54,14 +50,31 @@ public class Main {
             }
         } else if (tbrF.getClass().toString().equals("class Frame")) {
             tbr = tbrF;
-            System.out.println("You clicked on " + tbrF);
+            System.out.println("You clicked on the deck");
         }
         return tbr;
     }
 
     private static void moveAttempt(double x, double y) {
-//        find target frame
-//        selectedObj.move(target frame)
+        System.out.println("MA run");
+        if (selectedObj.getClass().toString().equals("class Card")){
+            Card temp = (Card) selectedObj;
+            int index = -1;
+            for (int i = 0; i < cardToFrame(temp).contents.length; i++){
+                if (cardToFrame(temp).contents[i].equals(temp)){
+                    index = i;
+                    break;
+                }
+            }
+            int l = cardToFrame(temp).contents.length;
+            for (int i = index; i < l; i++) {
+                System.out.println(cardToFrame(temp).contents.length);
+                moveTo(cardToFrame(temp).contents[i], findFrame(x, y));
+            }
+        } else {
+
+        }
+        selectedObj = null;
     }
 
     public static Card @NotNull [] shuffle(Card[] @NotNull [] tbs){
@@ -104,6 +117,11 @@ public class Main {
     public static Card[] removeFirstX(Card[] tbs, int n){
         Card[] tbr = new Card[tbs.length - n];
         if (tbs.length - n >= 0) { System.arraycopy(tbs, n, tbr, 0, tbs.length - n); }
+        return tbr;
+    }
+    public static Card[] removeLastX(Card[] tbs, int n){
+        Card[] tbr = new Card[tbs.length - n];
+        if (tbs.length - n >= 0) { System.arraycopy(tbs, 0, tbr, 0, tbs.length - n); }
         return tbr;
     }
     public static void moveTo(Card car, Frame fra){
@@ -149,16 +167,22 @@ public class Main {
     }
     public static Frame cardToFrame(Card car){
         for (Frame fra: Frame.all){
-//            System.out.println("Looking through " + fra);
             for (Card c: fra.contents) {
-//                System.out.println("Checking match to " + c);
                 if (c.equals(car)){
-//                    System.out.println("cTF found " + fra);
                     return fra;
                 }
             }
         }
-//        System.out.println("cTF FAIL");
         return null;
+    }
+    public static Frame findFrame(double x, double y){
+        Frame tbr = null;
+        for (Card car: allCards) {
+            if ((x > car.hitbox()[0] && x < car.hitbox()[2]) && (y > car.hitbox()[1] && y < car.hitbox()[3])){
+                tbr = cardToFrame(car);
+                break;
+            }
+        }
+        return tbr;
     }
 }

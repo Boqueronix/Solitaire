@@ -12,13 +12,13 @@ public class Board {
     public static Column[] columns = {col1, col2, col3, col4, col5, col6, col7};;
     //Starting deck and pile
     public static Frame deckFrame = new Frame(0.07,0.56);
-    public static Frame pileFrame = new Frame(0.07,0.40);
+    public static OpenFrame pileFrame = new OpenFrame(0.07,0.40);
     //Finishing suit piles
     public static Suiter spadeFrame = new Suiter(0.07,0.09);
     public static Suiter diamondFrame = new Suiter(0.19,0.09);
     public static Suiter clubFrame = new Suiter(0.31,0.09);
     public static Suiter heartFrame = new Suiter(0.43,0.09);
-    public static Suiter[] suitPiles = {spadeFrame,diamondFrame,clubFrame,heartFrame};
+    public static Suiter[] openPiles = {spadeFrame,diamondFrame,clubFrame,heartFrame};
     public static void init(){
         StdDraw.setPenColor(Color.GREEN);
         StdDraw.filledSquare(0.5,0.5,0.5);
@@ -29,7 +29,7 @@ public class Board {
         }
         deckFrame.draw();
         pileFrame.draw();
-        for (Frame pile:suitPiles) {
+        for (Frame pile:openPiles) {
             pile.draw();
         }
     }
