@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 public class Main {
     public static Card[][] ordered = new Card[4][13];
-    public static Card[] all;
+    public static Card[] allCards;
     public static Card[] deck;
     public static Object selectedObj;
     public static boolean mousePressed = false;
@@ -14,8 +14,8 @@ public class Main {
         for (int i = 0; i < 52; i++) {
             ordered[i / 13][i % 13] = new Card(i / 13, (i % 13) + 1);
         }
-        all = shuffle(ordered);
-        deck = all;
+        allCards = shuffle(ordered);
+        deck = allCards;
 //        for (Card c: deck) { c.revealed = true;}
         init();
         while (true){
@@ -24,7 +24,9 @@ public class Main {
                 if (selected) {
                     moveAttempt(StdDraw.mouseX, StdDraw.mouseY);
                 } else {
-                    selectedObj = select(StdDraw.mouseX, StdDraw.mouseY);
+                    try {
+                        selectedObj = select(StdDraw.mouseX, StdDraw.mouseY);
+                    } catch (Exception e){}
                 }
             } else if (!StdDraw.isMousePressed() && mousePressed) {
                 mousePressed = false;
@@ -33,13 +35,28 @@ public class Main {
     }
 
     private static Object select(double x, double y) {
-        for (Card car: all) {
+        Frame tbrF = null;
+        Object tbr = null;
+        for (Card car: allCards) {
             if ((x > car.hitbox()[0] && x < car.hitbox()[2]) && (y > car.hitbox()[1] && y < car.hitbox()[3])){
-                System.out.println("You clicked on the" + car);
-
+//                System.out.println("You clicked on the " + car);
+                tbrF = cardToFrame(car);
+                break;
             }
         }
-        return null;
+        if (tbrF.getClass().toString().equals("class Column")){
+            for (int i = tbrF.contents.length - 1; i >= 0; i--) {
+                if ((x > tbrF.contents[i].hitbox()[0] && x < tbrF.contents[i].hitbox()[2]) && (y > tbrF.contents[i].hitbox()[1] && y < tbrF.contents[i].hitbox()[3])){
+                    System.out.println("You clicked on the " + tbrF.contents[i]);
+                    tbr = tbrF.contents[i];
+                    break;
+                }
+            }
+        } else if (tbrF.getClass().toString().equals("class Frame")) {
+            tbr = tbrF;
+            System.out.println("You clicked on " + tbrF);
+        }
+        return tbr;
     }
 
     private static void moveAttempt(double x, double y) {
@@ -65,7 +82,7 @@ public class Main {
         }
         return tbr;
     }
-    //Uses all the cards in the ordered deck to make a new randomly assigned deck (1D Parameter)
+    //Uses allCards the cards in the ordered deck to make a new randomly assigned deck (1D Parameter)
     public static Card @NotNull [] shuffle(Card @NotNull [] tbs){
         int[] used = new int[tbs.length];
         int index = -1;
@@ -127,7 +144,21 @@ public class Main {
         }
         Board.deckFrame.contents = new Card[deck.length];
         System.arraycopy(deck,0,Board.deckFrame.contents,0,deck.length);
+        for (Card c: Board.deckFrame.contents) {c.coords = Board.deckFrame.coords;}
         StdDraw.picture(Board.deckFrame.coords[0], Board.deckFrame.coords[1], Main.backUrl, 0.1, 0.14);
     }
-//    public method
+    public static Frame cardToFrame(Card car){
+        for (Frame fra: Frame.all){
+//            System.out.println("Looking through " + fra);
+            for (Card c: fra.contents) {
+//                System.out.println("Checking match to " + c);
+                if (c.equals(car)){
+//                    System.out.println("cTF found " + fra);
+                    return fra;
+                }
+            }
+        }
+//        System.out.println("cTF FAIL");
+        return null;
+    }
 }
