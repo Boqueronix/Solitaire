@@ -2,23 +2,23 @@ import java.awt.*;
 
 public class Board {
     //Starting columns (Margins of 0.001 between card and border, 0.02 from card and edge)
-    public static Frame col7 = new Frame(0.93,0.91);
-    public static Frame col6 = new Frame(0.81,0.91);
-    public static Frame col5 = new Frame(0.69,0.91);
-    public static Frame col4 = new Frame(0.57,0.91);
-    public static Frame col3 = new Frame(0.45,0.91);
-    public static Frame col2 = new Frame(0.33,0.91);
-    public static Frame col1 = new Frame(0.21,0.91);
-    public static Frame[] columns = {col1, col2, col3, col4, col5, col6, col7};;
+    public static Column col7 = new Column(0.93,0.91);
+    public static Column col6 = new Column(0.81,0.91);
+    public static Column col5 = new Column(0.69,0.91);
+    public static Column col4 = new Column(0.57,0.91);
+    public static Column col3 = new Column(0.45,0.91);
+    public static Column col2 = new Column(0.33,0.91);
+    public static Column col1 = new Column(0.21,0.91);
+    public static Column[] columns = {col1, col2, col3, col4, col5, col6, col7};;
     //Starting deck and pile
-    public static Frame deckFrame = new Frame(0.07,0.40);
-    public static Frame pileFrame = new Frame(0.07,0.56);
+    public static Frame deckFrame = new Frame(0.07,0.56);
+    public static Frame pileFrame = new Frame(0.07,0.40);
     //Finishing suit piles
-    public static Frame spadeFrame = new Frame(0.07,0.09);
-    public static Frame diamondFrame = new Frame(0.19,0.09);
-    public static Frame clubFrame = new Frame(0.31,0.09);
-    public static Frame heartFrame = new Frame(0.43,0.09);
-    public static Frame[] suitPiles = {spadeFrame,diamondFrame,clubFrame,heartFrame};
+    public static Suiter spadeFrame = new Suiter(0.07,0.09);
+    public static Suiter diamondFrame = new Suiter(0.19,0.09);
+    public static Suiter clubFrame = new Suiter(0.31,0.09);
+    public static Suiter heartFrame = new Suiter(0.43,0.09);
+    public static Suiter[] suitPiles = {spadeFrame,diamondFrame,clubFrame,heartFrame};
     public static void init(){
         StdDraw.setPenColor(Color.GREEN);
         StdDraw.filledSquare(0.5,0.5,0.5);

@@ -46,11 +46,15 @@ public class Card {
             StdDraw.picture(coords[0], coords[1], Main.backUrl, 0.1, 0.14);
         }
     }
-    public void draw(double x, double y){
+    public void draw(double x, double y) {
         if (revealed) {
             StdDraw.picture(x, y, url, 0.1, 0.14);
         } else {
             StdDraw.picture(x, y, Main.backUrl, 0.1, 0.14);
         }
+    }
+    //Returns the highest and lowest x & y coords of the car in the format x1, y1, x2, y2 where the points are (0, 0) & (0.1, 0.14) respectively
+    public double[] hitbox() {
+        return new double[] {coords[0] - 0.05, coords[1] - 0.07, coords[0] + 0.05, coords[1] + 0.07};
     }
 }
