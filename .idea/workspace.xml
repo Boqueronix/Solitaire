@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="212f33cc-43cf-4895-ab2f-53a072c44bab" name="Changes" comment="Movement crashes often but occasionally works &#10;Kill me please">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Column.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Column.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Frame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="212f33cc-43cf-4895-ab2f-53a072c44bab" name="Changes" comment="Remove from source after move works individually most of the time" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -199,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669788729786</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Remove from source after move works individually most of the time">
+      <created>1669868527938</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1669868527938</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -232,7 +234,8 @@
     <MESSAGE value="Set up actually works plus start of card selection (mouse tracking)" />
     <MESSAGE value="Select method works as intended mostly" />
     <MESSAGE value="Movement crashes often but occasionally works &#10;Kill me please" />
-    <option name="LAST_COMMIT_MESSAGE" value="Movement crashes often but occasionally works &#10;Kill me please" />
+    <MESSAGE value="Remove from source after move works individually most of the time" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove from source after move works individually most of the time" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

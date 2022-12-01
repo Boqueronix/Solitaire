@@ -208,6 +208,7 @@ public class Main {
             }
 
         }
+        fra.contents = tbr;
         fra.draw();
         fra.drawContents();
     }
