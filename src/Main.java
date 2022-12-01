@@ -1,27 +1,33 @@
 import org.jetbrains.annotations.NotNull;
-import java.util.Arrays;
+import java.util.*;
 
 public class Main {
     public static Card[][] ordered = new Card[4][13];
-    public static Card[] allCards;
-    public static Card[] deck;
+    public static Card[] allCards = new Card[52];
     public static Object selectedObj;
     public static boolean mousePressed = false;
     public static String backUrl = "/svg_playing_cards/backs/back" + ((int) (Math.random() * 12)) + ".png";
     public static void main(String[] args) {
         Board.init();
+
         for (int i = 0; i < 52; i++) {
             ordered[i / 13][i % 13] = new Card(i / 13, (i % 13) + 1);
+            allCards[i] = ordered[i / 13][i % 13];
         }
-        allCards = shuffle(ordered);
-        deck = allCards;
-//        for (Card c: deck) { c.revealed = true;}
+        //allCards = shuffle(ordered);
+        Board.deckFrame.contents = allCards;
+        for (Card c: Board.deckFrame.contents) { c.revealed = true;}
         init();
         while (true){
             if (StdDraw.isMousePressed() && !mousePressed){
                 mousePressed = true;
                 if (selectedObj != null) {
-                    moveAttempt(StdDraw.mouseX, StdDraw.mouseY);
+                    try {
+                        moveAttempt(StdDraw.mouseX, StdDraw.mouseY);
+                    } catch (Exception e){
+                        System.out.println("You clicked on nothing");
+                        selectedObj = null;
+                    }
                 } else {
                     try {
                         selectedObj = select(StdDraw.mouseX, StdDraw.mouseY);
@@ -59,20 +65,22 @@ public class Main {
         System.out.println("MA run");
         if (selectedObj.getClass().toString().equals("class Card")){
             Card temp = (Card) selectedObj;
+            Frame src = cardToFrame(temp);
             int index = -1;
-            for (int i = 0; i < cardToFrame(temp).contents.length; i++){
-                if (cardToFrame(temp).contents[i].equals(temp)){
+            for (int i = 0; i < src.contents.length; i++){
+                if (src.contents[i].equals(temp)){
                     index = i;
                     break;
                 }
             }
-            int l = cardToFrame(temp).contents.length;
+            int l = src.contents.length;
             for (int i = index; i < l; i++) {
-                System.out.println(cardToFrame(temp).contents.length);
-                moveTo(cardToFrame(temp).contents[i], findFrame(x, y));
+                System.out.println(src.contents.length);
+                moveTo(src.contents[i], findFrame(x, y));
+                removeFrom(src.contents[i], src);
             }
         } else {
-
+            // Flip a card from the deck or refill deck
         }
         selectedObj = null;
     }
@@ -153,15 +161,13 @@ public class Main {
     }
     public static void init(){
         for (int i = 0; i < 7; i++) {
-            deck[i].revealed = true;
+            Board.deckFrame.contents[i].revealed = true;
             for (int j = 0; j < i + 1; j++) {
-                moveTo(deck[j], Board.columns[i]);
+                moveTo(Board.deckFrame.contents[j], Board.columns[i]);
             }
-            deck = removeFirstX(deck,i + 1);
-            System.out.println(deck.length);
+            Board.deckFrame.contents = removeFirstX(Board.deckFrame.contents,i + 1);
+            System.out.println(Board.deckFrame.contents.length);
         }
-        Board.deckFrame.contents = new Card[deck.length];
-        System.arraycopy(deck,0,Board.deckFrame.contents,0,deck.length);
         for (Card c: Board.deckFrame.contents) {c.coords = Board.deckFrame.coords;}
         StdDraw.picture(Board.deckFrame.coords[0], Board.deckFrame.coords[1], Main.backUrl, 0.1, 0.14);
     }
@@ -184,5 +190,25 @@ public class Main {
             }
         }
         return tbr;
+    }
+    public static void removeFrom(Card car, Frame fra){
+        int index = -1;
+        for (int i = 0; i < fra.contents.length; i++) {
+            if (fra.contents[i].equals(car)){
+                index = i;
+                break;
+            }
+        }
+        Card[] tbr = new Card[fra.contents.length -1];
+        for (int i = 0; i < fra.contents.length; i++) {
+            if (i < index){
+                tbr[i] = fra.contents[i];
+            } else if (i > index) {
+                tbr[i - 1] = fra.contents[i];
+            }
+
+        }
+        fra.draw();
+        fra.drawContents();
     }
 }
