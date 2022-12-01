@@ -6,7 +6,7 @@ public class Column extends Frame{
     }
     public void draw() {
         StdDraw.setPenColor(Color.GREEN);
-        StdDraw.filledRectangle(coords[0], coords[1], 0.05, 0.6);
+        StdDraw.filledRectangle(coords[0], coords[1], 0.05, 0.7);
         StdDraw.setPenColor(Color.WHITE);
         StdDraw.setPenRadius(0.004);
         StdDraw.rectangle(coords[0], coords[1], 0.055, 0.075);

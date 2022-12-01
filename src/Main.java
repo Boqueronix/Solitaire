@@ -16,7 +16,7 @@ public class Main {
         }
         //allCards = shuffle(ordered);
         Board.deckFrame.contents = allCards;
-        for (Card c: Board.deckFrame.contents) { c.revealed = true;}
+        for (Card c: Board.deckFrame.contents) { c.revealed = false;}
         init();
         while (true){
             if (StdDraw.isMousePressed() && !mousePressed){
@@ -74,10 +74,11 @@ public class Main {
                 }
             }
             int l = src.contents.length;
+            Card[] contentCopy = src.contents;
             for (int i = index; i < l; i++) {
-                System.out.println(src.contents.length);
-                moveTo(src.contents[i], findFrame(x, y));
-                removeFrom(src.contents[i], src);
+                System.out.println("Trying to move " + contentCopy[i]);
+                moveTo(contentCopy[i], findFrame(x, y));
+                removeFrom(contentCopy[i], src);
             }
         } else {
             // Flip a card from the deck or refill deck
