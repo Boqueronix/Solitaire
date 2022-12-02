@@ -28,6 +28,7 @@ public class Frame {
     }
     public void drawContents(){
         for (Card c: contents) {
+            c.revealed = false;
             c.draw();
         }
     }

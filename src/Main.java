@@ -1,4 +1,6 @@
 import org.jetbrains.annotations.NotNull;
+
+import java.awt.*;
 import java.util.*;
 
 public class Main {
@@ -14,7 +16,7 @@ public class Main {
             ordered[i / 13][i % 13] = new Card(i / 13, (i % 13) + 1);
             allCards[i] = ordered[i / 13][i % 13];
         }
-        //allCards = shuffle(ordered);
+        allCards = shuffle(ordered);
         Board.deckFrame.contents = allCards;
         for (Card c: Board.deckFrame.contents) { c.revealed = false;}
         init();
@@ -25,7 +27,7 @@ public class Main {
                     try {
                         moveAttempt(StdDraw.mouseX, StdDraw.mouseY);
                     } catch (Exception e){
-                        System.out.println("You clicked on nothing");
+//                      System.out.println("You clicked on nothing");
                         selectedObj = null;
                     }
                 } else {
@@ -55,37 +57,69 @@ public class Main {
                 }
             }
         } else if (tbrF.getClass().toString().equals("class Frame")) {
-            tbr = tbrF;
             System.out.println("You clicked on the deck");
+            if (Board.deckFrame.contents.length > 0) {
+                moveTo(Board.deckFrame.contents[Board.deckFrame.contents.length - 1], Board.pileFrame);
+                Board.pileFrame.drawContents();
+                removeFrom(Board.deckFrame.contents[Board.deckFrame.contents.length - 1], Board.deckFrame);
+                System.out.println(Board.pileFrame.contents.length);
+            } else {
+                for (int i = Board.pileFrame.contents.length - 1; i > - 1 ; i--) {
+                    moveTo(Board.pileFrame.contents[i], Board.deckFrame);
+                    removeFrom(Board.pileFrame.contents[Board.pileFrame.contents.length - 1], Board.pileFrame);
+                }
+                Board.deckFrame.drawContents();
+            }
+        } else if (tbrF.getClass().toString().equals("class OpenFrame")) {
+            if (tbrF.contents.length != 0) {
+                tbr = tbrF.contents[tbrF.contents.length - 1];
+            }
         }
         return tbr;
     }
 
     private static void moveAttempt(double x, double y) {
         System.out.println("MA run");
+        Card temp = (Card) selectedObj;
+        Frame src = cardToFrame(temp);
+        int l = src.contents.length;
+        Card[] contentCopy = src.contents;
         if (selectedObj.getClass().toString().equals("class Card")){
             if (findFrame(x, y).getClass().toString().equals("class Column")) {
-                Card temp = (Card) selectedObj;
-                Frame src = cardToFrame(temp);
-                int index = -1;
-                for (int i = 0; i < src.contents.length; i++) {
-                    if (src.contents[i].equals(temp)) {
-                        index = i;
-                        break;
+                if (canMove((Card) selectedObj, findFrame(x, y))) {
+                    int index = -1;
+                    for (int i = 0; i < src.contents.length; i++) {
+                        if (src.contents[i].equals(temp)) {
+                            index = i;
+                            break;
+                        }
                     }
+                    for (int i = index; i < l; i++) {
+                        System.out.println("Trying to move " + contentCopy[i]);
+                        moveTo(contentCopy[i], findFrame(x, y));
+                        removeFrom(contentCopy[i], src);
+                    }
+                } else {
+                    System.out.println("Move illegal");
                 }
-                int l = src.contents.length;
-                Card[] contentCopy = src.contents;
-                for (int i = index; i < l; i++) {
-                    System.out.println("Trying to move " + contentCopy[i]);
-                    moveTo(contentCopy[i], findFrame(x, y));
-                    removeFrom(contentCopy[i], src);
+            } else if (findFrame(x, y).getClass().toString().equals("class Suiter")){
+                if (findFrame(x, y).contents.length == 0 && temp.value == 1){
+                    System.out.println("Trying to move " + temp);
+                    moveTo(temp, findFrame(x, y));
+                    removeFrom(temp, src);
+                } else if (findFrame(x, y).contents[findFrame(x, y).contents.length - 1].value + 1 == temp.value && findFrame(x, y).contents[findFrame(x, y).contents.length - 1].suit == temp.suit) {
+                    System.out.println("Trying to move " + temp);
+                    moveTo(temp, findFrame(x, y));
+                    removeFrom(temp, src);
                 }
-            } else {
-                System.out.println("cant currently move outside columns");
+                if (Board.heartFrame.contents.length + Board.diamondFrame.contents.length + Board.clubFrame.contents.length + Board.spadeFrame.contents.length == 52){
+                    System.out.println("You win bitch");
+                    winGame();
+                }
+
             }
         } else {
-            // Flip a card from the deck or refill deck or move to an empty slot
+            // NO
         }
         selectedObj = null;
     }
@@ -138,6 +172,7 @@ public class Main {
         return tbr;
     }
     public static void moveTo(Card car, Frame fra){
+        if (fra.getClass().toString().equals("class OpenFrame")) {System.out.println("Flip " + car);}
         Card[] tbr = new Card[]{};
         try {
             tbr = new Card[fra.contents.length + 1];
@@ -149,6 +184,7 @@ public class Main {
             }
         }
         fra.contents = tbr;
+        car.coords = fra.coords;
         boolean col = false;
         for (int i = 0; i < 7; i++) {
             if (fra.equals(Board.columns[i])){
@@ -187,7 +223,7 @@ public class Main {
         return null;
     }
     public static Frame findFrame(double x, double y){
-        for (Frame fra: Board.allFrames) {
+        for (Frame fra: Frame.all) {
             if ((x > fra.hitbox()[0] && x < fra.hitbox()[2]) && (y > fra.hitbox()[1] && y < fra.hitbox()[3])){
                 return fra;
             }
@@ -200,7 +236,7 @@ public class Main {
         return null;
     }
     public static void removeFrom(Card car, Frame fra){
-        int index = -1;
+        int index = fra.contents.length -1;
         for (int i = 0; i < fra.contents.length; i++) {
             if (fra.contents[i].equals(car)){
                 index = i;
@@ -219,5 +255,20 @@ public class Main {
         fra.contents = tbr;
         fra.draw();
         fra.drawContents();
+    }
+    public static boolean canMove(Card car, Frame fra){
+        if (fra.contents.length == 0 && car.valueStr.equals("king")){
+            return true;
+        } else if (fra.contents.length != 0) {
+            if (fra.contents[fra.contents.length -1].value - 1 == car.value && fra.contents[fra.contents.length -1].black != car.black){
+               return true;
+            }
+        }
+        return false;
+    }
+    public static void winGame(){
+        StdDraw.setPenColor(Color.BLUE);
+        StdDraw.filledSquare(0.5,0.5,0.5);
+        StdDraw.text(0.5, 0.5, "MF won!!!!");
     }
 }
