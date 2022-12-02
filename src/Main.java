@@ -70,7 +70,7 @@ public class Main {
                 }
                 Board.deckFrame.drawContents();
             }
-        } else if (tbrF.getClass().toString().equals("class OpenFrame")) {
+        } else if (tbrF.getClass().toString().equals("class OpenFrame") || tbrF.getClass().toString().equals("class Suiter")) {
             if (tbrF.contents.length != 0) {
                 tbr = tbrF.contents[tbrF.contents.length - 1];
             }
@@ -269,6 +269,7 @@ public class Main {
     public static void winGame(){
         StdDraw.setPenColor(Color.BLUE);
         StdDraw.filledSquare(0.5,0.5,0.5);
+        StdDraw.setPenColor(Color.WHITE);
         StdDraw.text(0.5, 0.5, "MF won!!!!");
     }
 }
