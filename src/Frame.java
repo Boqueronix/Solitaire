@@ -31,6 +31,9 @@ public class Frame {
             c.draw();
         }
     }
+    public double[] hitbox() {
+        return new double[] {coords[0] - 0.055, coords[1] - 0.075, coords[0] + 0.055, coords[1] + 0.075};
+    }
     public String toString(){
         return "Frame at " + coords[0] + ", " + coords[1];
     }

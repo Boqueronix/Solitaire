@@ -48,7 +48,7 @@ public class Main {
         /* Also try (tbrF.contents[tbrF.contents.length - 1].revealed) to Include all open piles*/
         if (tbrF.getClass().toString().equals("class Column") && tbrF.contents[tbrF.contents.length - 1].revealed){
             for (int i = tbrF.contents.length - 1; i >= 0; i--) {
-                if ((x > tbrF.contents[i].hitbox()[0] && x < tbrF.contents[i].hitbox()[2]) && (y > tbrF.contents[i].hitbox()[1] && y < tbrF.contents[i].hitbox()[3])){
+                if ((x > tbrF.contents[i].hitbox()[0] && x < tbrF.contents[i].hitbox()[2]) && (y > tbrF.contents[i].hitbox()[1] && y < tbrF.contents[i].hitbox()[3]) && tbrF.contents[i].revealed){
                     System.out.println("You clicked on the " + tbrF.contents[i]);
                     tbr = tbrF.contents[i];
                     break;
@@ -64,24 +64,28 @@ public class Main {
     private static void moveAttempt(double x, double y) {
         System.out.println("MA run");
         if (selectedObj.getClass().toString().equals("class Card")){
-            Card temp = (Card) selectedObj;
-            Frame src = cardToFrame(temp);
-            int index = -1;
-            for (int i = 0; i < src.contents.length; i++){
-                if (src.contents[i].equals(temp)){
-                    index = i;
-                    break;
+            if (findFrame(x, y).getClass().toString().equals("class Column")) {
+                Card temp = (Card) selectedObj;
+                Frame src = cardToFrame(temp);
+                int index = -1;
+                for (int i = 0; i < src.contents.length; i++) {
+                    if (src.contents[i].equals(temp)) {
+                        index = i;
+                        break;
+                    }
                 }
-            }
-            int l = src.contents.length;
-            Card[] contentCopy = src.contents;
-            for (int i = index; i < l; i++) {
-                System.out.println("Trying to move " + contentCopy[i]);
-                moveTo(contentCopy[i], findFrame(x, y));
-                removeFrom(contentCopy[i], src);
+                int l = src.contents.length;
+                Card[] contentCopy = src.contents;
+                for (int i = index; i < l; i++) {
+                    System.out.println("Trying to move " + contentCopy[i]);
+                    moveTo(contentCopy[i], findFrame(x, y));
+                    removeFrom(contentCopy[i], src);
+                }
+            } else {
+                System.out.println("cant currently move outside columns");
             }
         } else {
-            // Flip a card from the deck or refill deck
+            // Flip a card from the deck or refill deck or move to an empty slot
         }
         selectedObj = null;
     }
@@ -183,14 +187,17 @@ public class Main {
         return null;
     }
     public static Frame findFrame(double x, double y){
-        Frame tbr = null;
-        for (Card car: allCards) {
-            if ((x > car.hitbox()[0] && x < car.hitbox()[2]) && (y > car.hitbox()[1] && y < car.hitbox()[3])){
-                tbr = cardToFrame(car);
-                break;
+        for (Frame fra: Board.allFrames) {
+            if ((x > fra.hitbox()[0] && x < fra.hitbox()[2]) && (y > fra.hitbox()[1] && y < fra.hitbox()[3])){
+                return fra;
             }
         }
-        return tbr;
+        for (Card car: allCards) {
+            if ((x > car.hitbox()[0] && x < car.hitbox()[2]) && (y > car.hitbox()[1] && y < car.hitbox()[3])){
+                return cardToFrame(car);
+            }
+        }
+        return null;
     }
     public static void removeFrom(Card car, Frame fra){
         int index = -1;

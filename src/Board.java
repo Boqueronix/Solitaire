@@ -19,6 +19,7 @@ public class Board {
     public static Suiter clubFrame = new Suiter(0.31,0.09);
     public static Suiter heartFrame = new Suiter(0.43,0.09);
     public static Suiter[] openPiles = {spadeFrame,diamondFrame,clubFrame,heartFrame};
+    public static Frame[] allFrames = {col1, col2, col3, col4, col5, col6, col7, deckFrame, pileFrame, spadeFrame, diamondFrame, clubFrame, heartFrame};
     public static void init(){
         StdDraw.setPenColor(Color.GREEN);
         StdDraw.filledSquare(0.5,0.5,0.5);
